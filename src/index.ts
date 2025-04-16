@@ -20,4 +20,7 @@ mongoose.connect(process.env.MONGO_URI ?? "").then(() => {
 
 app.use("/api/notify", notifyRouter);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.listen(5000, '0.0.0.0', () => {
+    console.log("Server running on port 5000");
+  });
+  
