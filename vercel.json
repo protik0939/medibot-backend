@@ -1,26 +1,16 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "./src/index.ts",
-            "use": "@vercel/node",
-            "config": {
-                "maxDuration": 60
-            }
-        }
+      {
+        "src": "api/index.ts",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "/",
-            "methods": [
-                "GET",
-                "POST",
-                "PUT",
-                "PATCH",
-                "DELETE",
-                "OPTIONS"
-            ]
-        }
+      {
+        "src": "/(.*)",
+        "dest": "api/index.ts"
+      }
     ]
-}
+  }
+  
