@@ -1,10 +1,10 @@
 import express from "express";
 import Notification from "../models/Notification";
-import OneSignal from "onesignal-node";
+import { Client } from "onesignal-node"; // ✅ Fix this import
 
 const router = express.Router();
 
-const oneSignalClient = new OneSignal.Client(
+const oneSignalClient = new Client(
   process.env.YOUR_REST_API_KEY ?? '',
   process.env.YOUR_ONESIGNAL_APP_ID ?? ''
 );
@@ -20,7 +20,7 @@ router.post("/", async (req, res) => {
 
     await oneSignalClient.createNotification({
       contents: { en: message },
-      included_segments: ["All"], // Send to all subscribed users
+      included_segments: ["All"],
     });
 
     res.status(201).send("Notification saved and push sent.");
