@@ -42,7 +42,7 @@ var Notification_1 = require("../models/Notification");
 var OneSignal = require("onesignal-node");
 var router = express_1["default"].Router();
 // Initialize OneSignal Client
-var oneSignalClient = new OneSignal.Client((_a = process.env.YOUR_REST_API_KEY) !== null && _a !== void 0 ? _a : '', (_b = process.env.YOUR_ONESIGNAL_APP_ID) !== null && _b !== void 0 ? _b : );
+var oneSignalClient = new OneSignal.Client((_a = process.env.YOUR_REST_API_KEY) !== null && _a !== void 0 ? _a : '', (_b = process.env.YOUR_ONESIGNAL_APP_ID) !== null && _b !== void 0 ? _b : '');
 router.post("/", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var message, notification, response, err_1;
     return __generator(this, function (_a) {
